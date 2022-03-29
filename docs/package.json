@@ -17,22 +17,22 @@
   },
   "marp": {
     "author": "陈希章",
-    "description": "",
+    "description": "PAD的学习和研究",
     "lang": "zh-CN",
     "theme": "default",
-    "keywords": "",
-    "url": "",
-    "googleanalytics":""
+    "keywords": "PAD",
+    "url": "https://pad.xizhang.com",
+    "googleanalytics":"G-TL86NRVETS"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chenxizhang/inside-microsoft-identity-platform.git"
+    "url": "git+https://github.com/chenxizhang/pad.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chenxizhang/inside-microsoft-identity-platform/issues"
+    "url": "https://github.com/chenxizhang/pad/issues"
   },
-  "homepage": "https://github.com/chenxizhang/inside-microsoft-identity-platform#readme"
+  "homepage": "https://github.com/chenxizhang/pad#readme"
 }

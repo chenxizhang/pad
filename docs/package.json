@@ -1,0 +1,38 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx marp . --engine ./engine.js --html --theme docs.css",
+    "pdf": "npx marp --pdf -I . --output c:\\temp\\output --allow-local-files --html --theme docs.css",
+    "png": "npx marp --images png -I . --output c:\\temp\\output --allow-local-files --html --theme docs.css"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^1.7.0"
+  },
+  "marp": {
+    "author": "陈希章",
+    "description": "",
+    "lang": "zh-CN",
+    "theme": "default",
+    "keywords": "",
+    "url": "",
+    "googleanalytics":""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenxizhang/inside-microsoft-identity-platform.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chenxizhang/inside-microsoft-identity-platform/issues"
+  },
+  "homepage": "https://github.com/chenxizhang/inside-microsoft-identity-platform#readme"
+}

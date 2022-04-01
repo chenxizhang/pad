@@ -54,23 +54,35 @@
 
 - [x] 是只有Windows能用吗？
 
-   是的，是基于.net framework，目前没有基于.net core
+   是的，是基于.net framework，目前没有基于.net core?
 
 - [x] Windows10也能装？
 
    - 是的，亲测可装。Windows7不可以。windows 10 要64位
    - windows 11自带的，是从store安装的，程序文件在 C:\Program Files\WindowsApps\Microsoft.PowerAutomateDesktop_10.0.3444.0_x64__8wekyb3d8bbwe 
-   - windows 10 单独安装的，程序文件会在 
+   - windows 10 单独安装的，程序文件会在 C:\Program Files (x86)\Power Automate Desktop\Custom Modules
 
 
-- [ ] 如何快速开发并部署、分发自定义action？robin？
-- [ ] 在编辑器，如果不用鼠标拖放，action很容易错位，尤其是有if, loop，for each这种容器的情况下，是否有啥好的办法
-- [ ] 这些流程文件放在哪里去了？如何复制分享给其他人？导出robin文件？怎么复制部分代码的？我看群里聊
+- [x] 如何快速开发并部署、分发自定义action？robin？
+
+   可参考潘老师的教程：https://bbs.csdn.net/forums/rpa?category=0&typeId=17728
+
+- [x] 在编辑器，如果不用鼠标拖放，action很容易错位，尤其是有if, loop，for each这种容器的情况下，是否有啥好的办法
+
+   没有啥好的办法，尽量用鼠标拖。默认情况下，是在选中的action下面添加新的action。
+
+- [x] 这些流程文件放在哪里去了？如何复制分享给其他人？导出robin文件？怎么复制部分代码的？我看群里聊
+
+   - 如果有Power automate账号，则保存在云端；如果是普通账号，应该会在onedrive里面？ 
+   - 本地缓存 %userprofile%\AppData\Local\Microsoft\Power Automate Desktop
+   
 - [x] 安装了powerautomate 的runtime就可以运行云端流程了？
 
    不对，是反过来的。云端可以执行桌面的流程。但需要Premium的license才行。
 
 - [x] 有没有系统变量的概念，例如获取当前PAD的一些信息，例如当前流程是自己运行的呢，还是别别的流程调用的？
+
+   没有
 
 - [x] PAD 是不是开源的？针对其他产品最大的优势是什么？免费？Roadmap在哪里？
 
@@ -106,10 +118,6 @@
 
 - [x] 桌面流程如何自动化运行，例如定时运行？例如我定时要对某个网页做个截屏，这个怎么实现呢？
 
+   -PA 可以定时调用桌面流运行。本地的这个exe是否可以通过任务计划调度，待研究。
 
-
-- [ ] python 脚本仅支持2.0
-
-
-
-
+- [x] python 脚本仅支持2.0

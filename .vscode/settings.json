@@ -1,10 +1,13 @@
 {
-    "markdown.marp.themes": ["./docs/docs.css"],
-    "[markdown]": {
-        "editor.quickSuggestions": {
-          "other": true,
-          "comments": false,
-          "strings": true
-        },
-      }
+  "markdown.marp.themes": [
+    "./docs/docs.css"
+  ],
+  "markdown.marp.enableHtml": true,
+  "[markdown]": {
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+  }
 }

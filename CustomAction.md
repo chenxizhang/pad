@@ -78,7 +78,10 @@ dotnet build
 
 # 创建证书，并且导出私钥，另外启动安装，请注意要安装到 Trusted Root Certifications Authorities 里面
 
-New-SelfSignedCertificate -Subject Xizhang.PAD.Actions.Cert -Type CodeSigningCert | Export-PfxCertificate -Password (ConvertTo-SecureString -AsPlainText -Force "123456") -FilePath c:\temp\Xizhang.Test.pfx | start c:\temp\Xizhang.Test.pfx
+New-SelfSignedCertificate -Subject Xizhang.PAD.Actions.Cert -Type CodeSigningCert `
+  | Export-PfxCertificate -Password (ConvertTo-SecureString -AsPlainText -Force "123456") `
+    -FilePath c:\temp\Xizhang.Test.pfx `
+  | start c:\temp\Xizhang.Test.pfx
 
 ```
 

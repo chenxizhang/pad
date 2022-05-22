@@ -6,7 +6,7 @@
 dotnet new classlib -o Xizhang.Modules.Hello.Actions -f netstandard2.0
 ```
 
-项目名称中带有一个Modules
+项目名称中需要带有一个Modules
 
 
 ## 添加对SDK的应用
@@ -17,11 +17,11 @@ dotnet add package pad.action.sdk
 
 ## 修改csproj文件
 
-```xml
+```diff
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
++    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 </Project>
 
@@ -72,13 +72,20 @@ dotnet build
 
 ## 创建要签名的证书
 
-```
-New-SelfSignedCertificate -Subject Xizhang.PAD.Actions.Cert -Type CodeSigningCert
+在管理员模式下打开PowerShell
+
+```powershell
+
+# 创建证书，并且导出私钥，另外启动安装，请注意要安装到 Trusted Root Certifications Authorities 里面
+
+New-SelfSignedCertificate -Subject Xizhang.PAD.Actions.Cert -Type CodeSigningCert | Export-PfxCertificate -Password (ConvertTo-SecureString -AsPlainText -Force "123456") -FilePath c:\temp\Xizhang.Test.pfx | start c:\temp\Xizhang.Test.pfx
+
 ```
 
 导出这个证书的私钥，pfx文件，例如 xizhang.pfx, 这个证书要安装到 个人 =》可信根中。
 
-- [ ] 如何在创建证书时一步到位，放在可信根下面，并且导出pfx文件（含密码）
+- [x] 如何在创建证书时一步到位，放在可信根下面，并且导出pfx文件（含密码）
+  > 不能直接安装到可信根下面。这个必须手工操作。
 
 ## 使用证书签名
 
@@ -92,6 +99,8 @@ signtool timestamp /t http://time.certum.pl .\Xizhang.Modules.Hello.Actions.dll
 把 dll 复制到下面的目录
 
 C:\Program Files (x86)\Power Automate Desktop\custom-Modules
+
+**这里的关键是路径名必须是 custom-modules**
 
 请注意，把 Microsoft.Flow.RPA.Desktop.Modules.SDK.Extended.dll 也复制这个目录
 

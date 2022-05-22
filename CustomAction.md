@@ -80,8 +80,9 @@ dotnet build
 
 New-SelfSignedCertificate -Subject Xizhang.PAD.Actions.Cert -Type CodeSigningCert `
   | Export-PfxCertificate -Password (ConvertTo-SecureString -AsPlainText -Force "123456") `
-    -FilePath c:\temp\Xizhang.Test.pfx `
-  | start c:\temp\Xizhang.Test.pfx
+    -FilePath c:\temp\Xizhang.Test.pfx
+
+start c:\temp\Xizhang.Test.pfx
 
 ```
 
